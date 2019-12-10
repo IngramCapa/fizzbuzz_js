@@ -1,7 +1,18 @@
-//declaring a class
-var Javabuzz = function(){};
+function FizzBuzz() {
+}
 
-//using prototype is like declaring methods inside a ruby class
-Javabuzz.prototype.isDivisibleByThree = function(number) {
-    return (number % 3 === 0)
-};
+FizzBuzz.prototype.play = function(number) {
+  if (this._isDivisibleBy(15, number)) {
+    return 'FizzBuzz';
+  } else if (this._isDivisibleBy(5, number)) {
+    return 'Buzz';
+  } else if (this._isDivisibleBy(3, number)) {
+    return 'Fizz';
+  } else {
+    return number;
+  }
+}
+
+FizzBuzz.prototype._isDivisibleBy = function(divisor, number) {
+  return number % divisor === 0;
+}
